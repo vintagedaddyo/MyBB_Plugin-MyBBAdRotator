@@ -8,7 +8,7 @@
  *
  * MyBB Version: 1.8
  *
- * Plugin Version: 1.0
+ * Plugin Version: 1.1
  * 
  */
 
@@ -65,12 +65,12 @@ function MyBBAdRotator_activate() {
   // ***********************************************
 
   $mybb_ar_group = array(
-    "gid" => "NULL", 
+    "gid" => "0", 
     "name" => $lang->MyBBAdRotator_name_0, 
     "title" => $lang->MyBBAdRotator_title_0, 
     "description" => $lang->MyBBAdRotator_description_0, 
     "disporder" => "1", 
-    "isdefault" => "no"
+    "isdefault" => "0"
   );
   $db->insert_query("settinggroups", $mybb_ar_group);
   $gid = $db->insert_id();
@@ -80,7 +80,7 @@ function MyBBAdRotator_activate() {
   // ***********************************************
 
   $mybb_ar_setting = array(
-    "sid" => "NULL", 
+    "sid" => "0", 
     "name" => $lang->MyBBAdRotator_name_1, 
     "title" => $lang->MyBBAdRotator_title_1, 
     "description" => $lang->MyBBAdRotator_description_1, 
@@ -92,7 +92,7 @@ function MyBBAdRotator_activate() {
   $db->insert_query("settings", $mybb_ar_setting);
   // delimiter
   $mybb_ar_setting = array(
-    "sid" => "NULL", 
+    "sid" => "0", 
     "name" => $lang->MyBBAdRotator_name_2, 
     "title" => $lang->MyBBAdRotator_title_2, 
     "description" => $lang->MyBBAdRotator_description_2,  
@@ -104,23 +104,27 @@ function MyBBAdRotator_activate() {
   $db->insert_query("settings", $mybb_ar_setting);
   // header code section
   $mybb_ar_setting = array(
-    "sid" => "NULL", 
+    "sid" => "0", 
     "name" => $lang->MyBBAdRotator_name_3, 
     "title" => $lang->MyBBAdRotator_title_3, 
     "description" => $lang->MyBBAdRotator_description_3, 
     "optionscode" => "textarea", 
-    "value" => '', 
+    "value" => '<center><a href="index.php"><img src="images/MyBBAdRotator/ad-head_1.png" alt="ad-head-1" style="padding-bottom: 4px;"></a></center>
+    **** ROTATE ****
+               <center><a href="index.php"><img src="images/MyBBAdRotator/ad-head_2.png" alt="ad-head-2" style="padding-bottom: 4px;"></a></center>
+    **** ROTATE ****
+               <center><a href="index.php"><img src="images/MyBBAdRotator/ad-head_3.png" alt="ad-head-3" style="padding-bottom: 4px;"></a></center>', 
     "disporder" => "3", 
     "gid" => intval($gid)
   );
   $db->insert_query("settings", $mybb_ar_setting);
   // who to show header ads to
   $mybb_ar_setting = array(
-    "sid" => "NULL", 
+    "sid" => "0", 
     "name" => $lang->MyBBAdRotator_name_4, 
     "title" => $lang->MyBBAdRotator_title_4, 
     "description" => $lang->MyBBAdRotator_description_4, 
-    "optionscode" => "select \n 1=Guests / Unknown Visitors \n 2=Regulars / Logged in Users \n 3=Moderators and Admins \n 4=All (except Banned) \n 5=None (turn off temporarily)", 
+    "optionscode" => "select \n 1=".$lang->MyBBAdRotator_options_1." \n 2=".$lang->MyBBAdRotator_options_2." \n 3=".$lang->MyBBAdRotator_options_3." \n 4=".$lang->MyBBAdRotator_options_4." \n 5=".$lang->MyBBAdRotator_options_5."", 
     "value" => '1', 
     "disporder" => "4", 
     "gid" => intval($gid)
@@ -128,23 +132,27 @@ function MyBBAdRotator_activate() {
   $db->insert_query("settings", $mybb_ar_setting);
   // footer code section
   $mybb_ar_setting = array(
-    "sid" => "NULL", 
+    "sid" => "0", 
     "name" => $lang->MyBBAdRotator_name_5, 
     "title" => $lang->MyBBAdRotator_title_5, 
     "description" => $lang->MyBBAdRotator_description_5,  
     "optionscode" => "textarea", 
-    "value" => '', 
+    "value" => '<center><a href="index.php"><img src="images/MyBBAdRotator/ad-foot_1.png" alt="ad-foot-1" style="padding-top: 4px;"></a></center>
+    **** ROTATE ****
+               <center><a href="index.php"><img src="images/MyBBAdRotator/ad-foot_2.png" alt="ad-foot-2" style="padding-top: 4px;"></a></center>
+    **** ROTATE ****
+               <center><a href="index.php"><img src="images/MyBBAdRotator/ad-foot_3.png" alt="ad-foot-3" style="padding-top: 4px;"></a></center>', 
     "disporder" => "5", 
     "gid" => intval($gid)
   );
   $db->insert_query("settings", $mybb_ar_setting);
   // who to show footer ads to
   $mybb_ar_setting = array(
-    "sid" => "NULL", 
+    "sid" => "0", 
     "name" => $lang->MyBBAdRotator_name_6, 
     "title" => $lang->MyBBAdRotator_title_6, 
     "description" => $lang->MyBBAdRotator_description_6,  
-    "optionscode" => "select \n 1=Guests / Unknown Visitors \n 2=Regulars / Logged in Users \n 3=Moderators and Admins \n 4=All (except Banned) \n 5=None (turn off temporarily)", 
+    "optionscode" => "select \n 1=".$lang->MyBBAdRotator_options_1." \n 2=".$lang->MyBBAdRotator_options_2." \n 3=".$lang->MyBBAdRotator_options_3." \n 4=".$lang->MyBBAdRotator_options_4." \n 5=".$lang->MyBBAdRotator_options_5."", 
     "value" => '1', 
     "disporder" => "6", 
     "gid" => intval($gid)

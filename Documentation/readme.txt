@@ -24,3 +24,4 @@ Select "Guests" under "Who do you want to see header ads". The plugin chooses a 
 Enjoy :D
 
 * Updated to version 1.0 for MyBB 1.8.x usage by Vintagedaddyo
+* Updated to version 1.1 for MyBB 1.8.x usage by Vintagedaddyo
